@@ -139,6 +139,36 @@ sequenceDiagram
 
 ---
 
+###### Personas
+
+# Three users
+
+![w:220](adam.png) ![w:220](antony.png) ![w:220](clista.png)
+
+Inline. Sized with `![w:220]`. Thick borders. Offset shadows.
+
+---
+
+![bg left:40%](clista.png)
+
+## CLISTA
+
+Senior researcher.
+
+- Citations
+- Reproducibility
+- Plain text
+
+---
+
+![bg right:45%](adam.png)
+
+## ADAM
+
+Director of platform engineering. Reads source before docs.
+
+---
+
 <!-- _class: lead -->
 <!-- _paginate: false -->
 

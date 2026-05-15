@@ -209,6 +209,32 @@ td {
 tr:last-child td { border-bottom: none; }
 tr:nth-child(even) td { background: var(--nb-layer); }
 
+/* Images — Marp canonical embedding (inline, ![bg], ![bg left/right]) */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+p > img {
+  border: var(--nb-border-width) solid var(--nb-border);
+  box-shadow: var(--nb-shadow);
+}
+p img + img { margin-left: 0.6em; }
+figure { margin: 0.6em 0; }
+figure img {
+  display: block;
+  border: var(--nb-border-width) solid var(--nb-border);
+  box-shadow: var(--nb-shadow);
+}
+figcaption {
+  font-weight: 700;
+  font-size: 0.78em;
+  margin-top: 0.6em;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--nb-text-secondary);
+}
+
 /* Mark */
 mark {
   background: var(--nb-accent);

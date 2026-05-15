@@ -145,27 +145,10 @@ sequenceDiagram
 
 ![w:220](adam.png) ![w:220](antony.png) ![w:220](clista.png)
 
-Inline. Sized with `![w:220]`. Thick borders. Offset shadows.
+Inline. Sized with `![w:220]`. Wrap in `<figure>` for the thick-border / offset-shadow treatment.
 
----
-
-![bg left:40%](clista.png)
-
-## CLISTA
-
-Senior researcher.
-
-- Citations
-- Reproducibility
-- Plain text
-
----
-
-![bg right:45%](adam.png)
-
-## ADAM
-
-Director of platform engineering. Reads source before docs.
+- `![w:220](file.png)` — inline, no decoration
+- `<figure><img src="file.png"/><figcaption>...</figcaption></figure>` — brutalist border + shadow
 
 ---
 

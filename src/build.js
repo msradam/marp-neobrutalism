@@ -213,12 +213,8 @@ tr:nth-child(even) td { background: var(--nb-layer); }
 img {
   max-width: 100%;
   height: auto;
-  display: block;
 }
-p > img {
-  border: var(--nb-border-width) solid var(--nb-border);
-  box-shadow: var(--nb-shadow);
-}
+p img { display: inline-block; vertical-align: middle; }
 p img + img { margin-left: 0.6em; }
 figure { margin: 0.6em 0; }
 figure img {

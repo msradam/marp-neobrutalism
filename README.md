@@ -8,9 +8,63 @@ No upstream design system, the tokens are defined directly in `src/build.js`.
 
 Run `npm run example` to generate `examples/deck.html`, `examples/deck.pdf`, and `examples/deck.pptx`.
 
-## Install
+## Quick start
 
-Save the theme files anywhere on your system. A common spot is `~/.marp/themes/`:
+A fresh deck folder with full theme support, including per-slide Mermaid light/dark theming, in three steps.
+
+**1. Install in a new folder:**
+
+```bash
+mkdir pitch-deck && cd pitch-deck
+npm init -y
+npm install github:msradam/marp-neobrutalism @marp-team/marp-cli mermaid
+```
+
+**2. Drop in `.marprc.js`:**
+
+```js
+const path = require('path');
+const engine = require.resolve('marp-neobrutalism');
+const root = path.dirname(path.dirname(engine));
+module.exports = {
+  engine,
+  themeSet: [path.join(root, 'themes')],
+  html: true,
+  allowLocalFiles: true,
+};
+```
+
+**3. Write `deck.md`:**
+
+````markdown
+---
+marp: true
+theme: neobrutalism
+paginate: true
+---
+
+# Hello
+
+---
+
+```mermaid
+flowchart LR
+  A --> B --> C
+```
+````
+
+Render:
+
+```bash
+npx marp --config .marprc.js deck.md -o deck.pdf
+# or -o deck.html / deck.pptx
+```
+
+Per-slide Mermaid palette switching works out of the box because this package ships a custom Marp engine that re-themes each diagram based on the slide's class (`dark`, `invert`, etc.).
+
+## Light install (theme only, no Mermaid theming)
+
+If you don't want a `node_modules/` folder in your deck directory, save just the CSS to a central location:
 
 ```bash
 mkdir -p ~/.marp/themes
@@ -18,9 +72,17 @@ curl -sL https://raw.githubusercontent.com/msradam/marp-neobrutalism/main/themes
 curl -sL https://raw.githubusercontent.com/msradam/marp-neobrutalism/main/themes/neobrutalism-dark.css -o ~/.marp/themes/neobrutalism-dark.css
 ```
 
-### VS Code
+Render with the CSS directly:
 
-Install the [Marp for VS Code](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode) extension. Open your user settings JSON (`Cmd/Ctrl+Shift+P`, then `Preferences: Open User Settings (JSON)`) and add:
+```bash
+marp --theme ~/.marp/themes/neobrutalism.css deck.md -o deck.pdf
+```
+
+Mermaid blocks still render but with default colors instead of theme-aware ones. For full theming, use the Quick start above.
+
+### VS Code live preview
+
+Install [Marp for VS Code](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode). Open your user settings JSON (`Cmd/Ctrl+Shift+P`, then `Preferences: Open User Settings (JSON)`) and add:
 
 ```json
 {
@@ -31,44 +93,7 @@ Install the [Marp for VS Code](https://marketplace.visualstudio.com/items?itemNa
 }
 ```
 
-Replace `/Users/YOU` with the output of `echo "$HOME"` (or `%USERPROFILE%` on Windows). Once saved, any `.md` file with `marp: true` and `theme: neobrutalism` in the front matter previews with this theme. No per-folder install, no clone.
-
-### CLI
-
-```bash
-marp --theme ~/.marp/themes/neobrutalism.css deck.md -o deck.html
-```
-
-For a project-wide config, drop a `.marprc.js` next to the deck:
-
-```js
-const path = require('path');
-const os = require('os');
-module.exports = {
-  themeSet: [path.join(os.homedir(), '.marp', 'themes')],
-};
-```
-
-### Minimal deck
-
-```markdown
----
-marp: true
-theme: neobrutalism
-paginate: true
----
-
-<!-- _class: lead -->
-
-# My **presentation**
-
----
-
-## Slide two
-
-- Point one
-- Point two
-```
+Replace `/Users/YOU` with the output of `echo "$HOME"`. Any `.md` with `marp: true` and `theme: neobrutalism` in the front matter now previews with this theme. The VS Code extension uses its own engine and won't run the per-slide Mermaid theming, but it's ideal for writing and live preview. Use the Quick start CLI command for final exports.
 
 ## Per-slide variants
 

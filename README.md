@@ -8,16 +8,66 @@ No upstream design system, the tokens are defined directly in `src/build.js`.
 
 Run `npm run example` to generate `examples/deck.html`, `examples/deck.pdf`, and `examples/deck.pptx`.
 
-## Quick start
+## Install
+
+Save the theme files anywhere on your system. A common spot is `~/.marp/themes/`:
 
 ```bash
-marp --theme themes/neobrutalism.css deck.md -o deck.html
+mkdir -p ~/.marp/themes
+curl -sL https://raw.githubusercontent.com/msradam/marp-neobrutalism/main/themes/neobrutalism.css      -o ~/.marp/themes/neobrutalism.css
+curl -sL https://raw.githubusercontent.com/msradam/marp-neobrutalism/main/themes/neobrutalism-dark.css -o ~/.marp/themes/neobrutalism-dark.css
 ```
 
-Dark default:
+### VS Code
+
+Install the [Marp for VS Code](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode) extension. Open your user settings JSON (`Cmd/Ctrl+Shift+P`, then `Preferences: Open User Settings (JSON)`) and add:
+
+```json
+{
+  "markdown.marp.themes": [
+    "/Users/YOU/.marp/themes/neobrutalism.css",
+    "/Users/YOU/.marp/themes/neobrutalism-dark.css"
+  ]
+}
+```
+
+Replace `/Users/YOU` with the output of `echo "$HOME"` (or `%USERPROFILE%` on Windows). Once saved, any `.md` file with `marp: true` and `theme: neobrutalism` in the front matter previews with this theme. No per-folder install, no clone.
+
+### CLI
 
 ```bash
-marp --theme themes/neobrutalism-dark.css deck.md -o deck.html
+marp --theme ~/.marp/themes/neobrutalism.css deck.md -o deck.html
+```
+
+For a project-wide config, drop a `.marprc.js` next to the deck:
+
+```js
+const path = require('path');
+const os = require('os');
+module.exports = {
+  themeSet: [path.join(os.homedir(), '.marp', 'themes')],
+};
+```
+
+### Minimal deck
+
+```markdown
+---
+marp: true
+theme: neobrutalism
+paginate: true
+---
+
+<!-- _class: lead -->
+
+# My **presentation**
+
+---
+
+## Slide two
+
+- Point one
+- Point two
 ```
 
 ## Per-slide variants

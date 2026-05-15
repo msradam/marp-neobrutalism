@@ -1,0 +1,46 @@
+{
+  "name": "marp-neobrutalism",
+  "version": "0.1.0",
+  "description": "Marp theme in the neobrutalist style: thick borders, offset shadows, flat fills, bold grotesque type.",
+  "main": "engine/index.js",
+  "exports": {
+    ".": "./engine/index.js",
+    "./mermaid": "./mermaid/index.js",
+    "./themes/*": "./themes/*"
+  },
+  "files": [
+    "themes/",
+    "mermaid/",
+    "engine/",
+    "src/",
+    ".marprc.js"
+  ],
+  "scripts": {
+    "build": "node src/build.js",
+    "example": "npx @marp-team/marp-cli --config .marprc.js examples/deck.md -o examples/deck.html && npx @marp-team/marp-cli --config .marprc.js examples/deck.md -o examples/deck.pdf && npx @marp-team/marp-cli --config .marprc.js examples/deck.md -o examples/deck.pptx"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msradam/marp-neobrutalism.git"
+  },
+  "keywords": [
+    "marp",
+    "marp-theme",
+    "neobrutalism",
+    "brutalist",
+    "flat",
+    "presentation",
+    "slides",
+    "mermaid"
+  ],
+  "author": "Adam Munawar Rahman",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "@marp-team/marp-core": "^4.3.0"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.4.0",
+    "mermaid": "^11.15.0"
+  }
+}

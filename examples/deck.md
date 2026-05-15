@@ -20,11 +20,11 @@ footer: 'Neobrutalism for Marp'
 
 # What's in the box
 
-- Space Grotesk — bold grotesque sans-serif
+- Space Grotesk, bold grotesque sans-serif
 - Thick 2px borders on every element
 - 4px offset box-shadows, zero blur
 - Near-monochromatic: black, white, and one accent
-- Yellow accent (`#f5c842`) — swap it with any color
+- Yellow accent (`#f5c842`), swap it with any color
 
 ---
 
@@ -77,7 +77,7 @@ const rule: Record<Border, string> = {
 
 ## Accent slide
 
-`<!-- _class: accent -->` gives you a full yellow content slide — useful for callouts, warnings, or emphasis.
+`<!-- _class: accent -->` gives you a full yellow content slide, useful for callouts, warnings, or emphasis.
 
 Use it sparingly. That's the whole point.
 
@@ -143,12 +143,12 @@ sequenceDiagram
 
 # Three users
 
-![w:220](adam.png) ![w:220](antony.png) ![w:220](clista.png)
+![w:220](img/aadam.png) ![w:220](img/antony.png) ![w:220](img/clista.png)
 
 Inline. Sized with `![w:220]`. Wrap in `<figure>` for the thick-border / offset-shadow treatment.
 
-- `![w:220](file.png)` — inline, no decoration
-- `<figure><img src="file.png"/><figcaption>...</figcaption></figure>` — brutalist border + shadow
+- `![w:220](file.png)`, inline, no decoration
+- `<figure><img src="file.png"/><figcaption>...</figcaption></figure>`, brutalist border + shadow
 
 ---
 

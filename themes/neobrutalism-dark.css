@@ -4,7 +4,7 @@
  * @size 16:9 1280px 720px
  * @size 4:3 960px 720px
  *
- * Marp theme in the neobrutalist style — dark default.
+ * Marp theme in the neobrutalist style, dark default.
  * Thick white borders, offset white shadows, Space Grotesk.
  *
  * Run `npm run build` to regenerate.
@@ -194,7 +194,7 @@ td {
 tr:last-child td { border-bottom: none; }
 tr:nth-child(even) td { background: var(--nb-layer); }
 
-/* Images — Marp canonical embedding (inline, ![bg], ![bg left/right]) */
+/* Images, Marp canonical embedding (inline, ![bg], ![bg left/right]) */
 img {
   max-width: 100%;
   height: auto;

@@ -3,7 +3,7 @@
 const fs   = require('fs');
 const path = require('path');
 
-// Neobrutalism design tokens — defined here, no upstream npm package.
+// Neobrutalism design tokens, defined here, no upstream npm package.
 // The aesthetic: thick borders, offset box-shadows with zero blur,
 // flat fills, near-monochromatic with one bold accent, zero border-radius.
 
@@ -67,7 +67,7 @@ function cssVars(t, prefix) {
   --${prefix}-pad:           60px;`.trimStart();
 }
 
-// Shared structural CSS — same for both themes, references vars.
+// Shared structural CSS, same for both themes, references vars.
 const STRUCTURE = `
 section {
   font-family: var(--nb-font);
@@ -209,7 +209,7 @@ td {
 tr:last-child td { border-bottom: none; }
 tr:nth-child(even) td { background: var(--nb-layer); }
 
-/* Images — Marp canonical embedding (inline, ![bg], ![bg left/right]) */
+/* Images, Marp canonical embedding (inline, ![bg], ![bg left/right]) */
 img {
   max-width: 100%;
   height: auto;
@@ -388,7 +388,7 @@ function buildDark() {
  * @size 16:9 1280px 720px
  * @size 4:3 960px 720px
  *
- * Marp theme in the neobrutalist style — dark default.
+ * Marp theme in the neobrutalist style, dark default.
  * Thick white borders, offset white shadows, Space Grotesk.
  *
  * Run \`npm run build\` to regenerate.

@@ -195,7 +195,7 @@ td {
 tr:last-child td { border-bottom: none; }
 tr:nth-child(even) td { background: var(--nb-layer); }
 
-/* Images — Marp canonical embedding (inline, ![bg], ![bg left/right]) */
+/* Images, Marp canonical embedding (inline, ![bg], ![bg left/right]) */
 img {
   max-width: 100%;
   height: auto;

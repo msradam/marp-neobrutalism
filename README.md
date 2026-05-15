@@ -2,7 +2,7 @@
 
 A Marp theme in the neobrutalist style: thick borders, offset box-shadows with zero blur, flat fills, near-monochromatic palette with one bold accent.
 
-No upstream design system — the tokens are defined directly in `src/build.js`.
+No upstream design system, the tokens are defined directly in `src/build.js`.
 
 ## Preview
 
@@ -80,6 +80,10 @@ examples/
   deck.pdf               # rendered PDF
   deck.pptx              # rendered PowerPoint
 ```
+
+## Credits
+
+Persona illustrations in `examples/img/` by [Victoruler](https://www.flaticon.com/authors/victoruler) on [Flaticon](https://www.flaticon.com/).
 
 ## License
 
